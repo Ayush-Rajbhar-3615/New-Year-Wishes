@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send New Year Wishes</title>
+    <style>
+        /* CSS Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a0b2e 0%, #4a0e4e 100%);
+            /* Purple/Dark theme */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* animated background circles */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+        }
+
+        .c1 {
+            width: 200px;
+            height: 200px;
+            top: -50px;
+            left: -50px;
+        }
+
+        .c2 {
+            width: 300px;
+            height: 300px;
+            bottom: -50px;
+            right: -50px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffd700;
+            /* Gold */
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #e0e0e0;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            text-align: center;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:focus {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Simple animation for text */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .anim-text {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-circle c1"></div>
+    <div class="bg-circle c2"></div>
+
+    <div class="container">
+        <h1 class="anim-text">Happy New Year! <br>✨2026✨</h1>
+        <p>Create your wish and share it with friends!</p>
+
+        <div class="input-group">
+            <input type="text" id="senderName" placeholder="Enter Your Name Here" required>
+        </div>
+
+        <button class="whatsapp-btn" onclick="shareOnWhatsApp()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382C17.11 14.196 15.335 13.303 15.002 13.181C14.669 13.06 14.426 13 14.183 13.364C13.94 13.727 13.245 14.545 13.033 14.788C12.821 15.03 12.609 15.061 12.246 14.879C11.883 14.697 10.713 14.309 9.326 13.061C8.225 12.071 7.482 10.849 7.27 10.485C7.058 10.121 7.247 9.924 7.429 9.743C7.592 9.581 7.791 9.321 7.973 9.109C8.155 8.897 8.216 8.745 8.337 8.503C8.458 8.261 8.397 8.049 8.306 7.867C8.215 7.685 7.488 5.867 7.185 5.14C6.891 4.434 6.592 4.53 6.366 4.53C6.155 4.53 5.913 4.53 5.67 4.53C5.428 4.53 5.034 4.621 4.701 4.985C4.368 5.349 3.428 6.228 3.428 8.016C3.428 9.804 4.701 11.531 4.883 11.773C5.065 12.016 7.401 15.713 11.066 17.228C14.731 18.743 14.731 18.258 15.397 18.197C16.063 18.137 17.533 17.303 17.836 16.424C18.139 15.545 18.139 14.788 18.048 14.636C17.957 14.485 17.715 14.382 17.472 14.382Z" />
+            </svg>
+            Share on WhatsApp
+        </button>
+
+        <div class="footer">
+            Start the chain! Send your wishes now.
+        </div>
+    </div>
+
+    <script>
+        function shareOnWhatsApp() {
+            // 1. Get the name from the input box
+            var name = document.getElementById("senderName").value;
+
+            // 2. Validation: Check if name is empty
+            if (name.trim() === "") {
+                alert("Please enter your name first!");
+                return;
+            }
+
+            // 3. Get the current website URL
+            // NOTE: If you are testing this locally (file://), this link won't work for others.
+            // You must upload this file to a host to make it shareable.
+            var websiteUrl = window.location.href;
+
+            // 4. Create the message string
+            // \n represents a new line
+            var message = "🌟 *Happy New Year 2026!* 🌟\n\n";
+            message += "*" + name + "* has sent you a special surprise wish! 🎆\n\n";
+            message += "Click the link below to see it and send your own:\n";
+            message += websiteUrl;
+
+            // 5. Encode the message for URL format
+            var encodedMessage = encodeURIComponent(message);
+
+            // 6. Create the WhatsApp API link
+            var whatsappLink = "https://wa.me/?text=" + encodedMessage;
+
+            // 7. Open WhatsApp
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
